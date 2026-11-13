@@ -1,30 +1,147 @@
-# Organiza+ — MariaDB/XAMPP
+# Organiza+ — Sistema de Organização Escolar
 
-Projeto com Python POO, Flask, HTML, CSS, JavaScript e MariaDB/MySQL.
+## 1. Sobre o projeto
 
-## Banco
-O código usa exatamente as tabelas `estudante`, `materia` e `atividade`, e os campos do SQL enviado. Se o banco `organiza_mais` já existe no phpMyAdmin, não importe o SQL novamente; `database/banco.sql` é apenas uma referência para recriar o banco.
+O **Organiza+** é um sistema web desenvolvido com o objetivo de ajudar estudantes a organizar suas atividades escolares, trabalhos, provas e prazos de entrega.
 
-## Conexão XAMPP
-Em `backend/config/conexao.py`, o padrão é host `localhost`, porta `3306`, usuário `root`, senha vazia e banco `organiza_mais`. Altere se seu XAMPP usar outra configuração.
+A proposta surgiu da necessidade de facilitar a rotina dos estudantes, evitando esquecimentos e permitindo um melhor acompanhamento das tarefas.
 
-## Executar no Windows
-1. Inicie Apache e MySQL no XAMPP.
-2. Abra a pasta raiz no VS Code.
-3. No terminal:
-   `py -m venv .venv`
-   `.\.venv\Scripts\Activate.ps1`
-   `pip install -r requirements.txt`
-   `python backend/app.py`
-4. Abra `frontend/index.html` com Live Server.
-5. Teste `http://127.0.0.1:5000/api/health`.
+## 2. Integrantes
 
-Cadastre na ordem: estudante → matéria → atividade.
+- Ana Clara
+- Heloisa Esther
 
-## Rotas
-- GET/POST `/api/estudantes`
-- GET/POST/DELETE `/api/materias`
-- GET/POST/PUT/DELETE `/api/atividades`
-- PATCH `/api/atividades/<id>/status`
+**Turma:** 2TID
 
-A chave estrangeira impede excluir uma matéria que ainda tenha atividades vinculadas.
+## 3. Objetivo
+
+Desenvolver uma plataforma simples e intuitiva que permita cadastrar, organizar, editar e acompanhar atividades escolares, contribuindo para uma rotina de estudos mais organizada.
+
+## 4. Público-alvo
+
+Estudantes do Ensino Fundamental, Ensino Médio e Ensino Técnico que desejam melhorar sua organização escolar.
+
+## 5. Funcionalidades
+
+- Cadastro de estudantes.
+- Cadastro de matérias.
+- Cadastro de atividades escolares.
+- Edição de atividades.
+- Exclusão de atividades.
+- Organização das atividades por matéria.
+- Visualização das datas de entrega.
+- Identificação de atividades pendentes e concluídas.
+- Atualização do status das atividades.
+
+## 6. Tecnologias utilizadas
+
+### Front-end
+- HTML5
+- CSS3
+- JavaScript
+
+### Back-end
+- Python
+- Flask
+- Programação Orientada a Objetos (POO)
+
+### Banco de dados
+- MariaDB / MySQL
+- XAMPP
+- phpMyAdmin
+
+### Ferramentas
+- Visual Studio Code
+- Git
+- GitHub
+
+## 7. Estrutura do projeto
+
+```text
+organiza_mais/
+│
+├── backend/
+│   ├── config/
+│   ├── dao/
+│   ├── models/
+│   ├── routes/
+│   └── app.py
+│
+├── frontend/
+│   ├── css/
+│   │   └── estilo.css
+│   ├── js/
+│   │   └── main.js
+│   └── index.html
+│
+├── database/
+│   └── banco.sql
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+## 8. Banco de dados
+
+O sistema utiliza o banco de dados `organiza_mais`, composto por três tabelas principais:
+
+- **estudante:** armazena os dados dos estudantes.
+- **materia:** armazena as matérias relacionadas aos estudantes.
+- **atividade:** armazena os títulos, descrições, tipos, datas de entrega e status das atividades.
+
+As tabelas possuem relacionamentos por meio de chaves estrangeiras.
+
+## 9. Como executar o projeto
+
+### Pré-requisitos
+
+- Python instalado.
+- XAMPP instalado.
+- Visual Studio Code.
+- Navegador de internet.
+
+### Passo 1 — Banco de dados
+
+1. Abra o XAMPP.
+2. Inicie o Apache e o MySQL.
+3. Acesse o phpMyAdmin.
+4. Crie ou selecione o banco `organiza_mais`.
+5. Importe o arquivo `database/banco.sql`, caso as tabelas ainda não existam.
+
+### Passo 2 — Instalar dependências
+
+No terminal, dentro da pasta principal do projeto, execute:
+
+```powershell
+pip install -r requirements.txt
+```
+
+### Passo 3 — Iniciar o back-end
+
+Execute:
+
+```powershell
+python -m backend.app
+```
+
+O servidor ficará disponível em:
+
+```text
+http://127.0.0.1:5000
+```
+
+### Passo 4 — Abrir o front-end
+
+Abra o arquivo `frontend/index.html` utilizando o Live Server do Visual Studio Code.
+
+## 10. Resultados esperados
+
+Espera-se que o Organiza+ facilite a organização das atividades escolares, ajude os estudantes a acompanhar seus prazos e proporcione uma maneira prática de visualizar suas responsabilidades.
+
+## 11. Considerações finais
+
+O desenvolvimento do Organiza+ proporciona a aplicação prática dos conhecimentos de desenvolvimento web, banco de dados, Python, Flask e Programação Orientada a Objetos.
+
+O projeto busca oferecer uma solução tecnológica para uma dificuldade comum na vida dos estudantes: a organização da rotina escolar.
+
